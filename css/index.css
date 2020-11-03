@@ -1,0 +1,115 @@
+body {
+    background-color: #F2F2F2;
+    padding: 30px 30px 50px 50px; /*위아래오왼*/
+    font-family: Infinity Sans;
+}
+
+nav {
+    font-weight: bold;
+    font-family: Infinity Sans;
+    font-size: 50px;
+    color: #6C5B7B;
+
+}
+
+a {
+    text-decoration: none;
+    color: #6C5B7B;
+}
+
+footer {
+    text-align: center;
+}
+
+.container {
+    padding: 30px;
+}
+
+.new_game {
+    text-align: center;
+    font-family: Infinity Sans;
+    font-size: 20px;
+    color: #C06C84;
+    position: absolute;
+}
+
+
+.card {
+    height: 200px;
+    width: 300px;
+    border-radius: 15px;
+    display: inline-block;
+    position: relative;
+    margin: 50px 30px 30px 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 rgba(0, 0, 0, 0.10);
+    overflow: hidden;
+}
+
+.card:hover .card-header  {
+	opacity: 0.7;
+	height: 100px;
+}
+
+.card-header {
+	-webkit-transition: 0.5s; /*사파리 & 크롬*/
+    -moz-transition: 0.5s;  /*파이어폭스*/
+    -ms-transition: 0.5s;	/*인터넷 익스플로러*/
+    -o-transition: 0.5s;  /*오페라*/
+    transition: 0.5s;
+	width: 100%;
+	height: 270px;
+	border-radius: 15px 15px 0 0;
+	background-size: 100% 280px;
+	background-repeat: no-repeat;	
+}
+
+.game-img {
+    background-image: url("./1+\(36\).jpg");
+}
+
+.game-img-2 {
+    background-image: url("./1+\(27\).jpg");
+}
+
+.card-header-text-new {
+    background-color: #C06C84 ;
+    color: #FFF ;
+    font-weight: bold ;
+    text-align: center;
+    float: right;
+    margin: 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    padding: 5px;
+    line-height: 15px;
+}
+
+.card-header-text-best {
+    background-color: #6C5B7B ;
+    color: #FFF ;
+    font-weight: bold ;
+    text-align: center;
+    float: right;
+    margin: 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    padding: 5px;
+    line-height: 15px;
+}
+
+.card-body {
+}
+
+.card-body-header {
+    line-height: 25px;
+    margin: 20px;
+    color: #C06C84;
+    text-align: center;
+    font-size: 10px;
+}
+
+.game-info-tag {
+    color: #6C5B7B;
+    font-size: 5px;
+    font-weight: bold;
+}

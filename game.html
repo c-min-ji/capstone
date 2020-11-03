@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <!--<link rel="stylesheet" href="css/reset.css">-->
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header+footer.css">
+    <link rel="stylesheet" href="css/welcome.css">
+    <link rel="stylesheet" href="css/qna.css">
+    <link rel="stylesheet" href="css/calc.css">
+    <link rel="stylesheet" href="css/result.css">
+    <title>Impo</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <a href="./index.html" >IMPO</a>
+            <!--<button class="logo head" onclick=javascript:switchMode()></button>-->
+        </header>
+        <section id="welcome" class="container">
+            <div id="title-box">
+                <h1 class="title">
+                    당신만의<br>
+                    꽃말 테스트
+                </h1>
+                <h3 class="sec-tit">
+                    나에게 어울리는<br>
+                    꽃말은 무엇일까?
+                </h3>
+            </div>
+            <div id="name-input">
+                <input type="text" placeholder="이름을 입력해주세요." autofocus>
+            </div>
+            <p class="check-name warning"></p>
+            <div class="start-wrap">
+                <button class="start">시 작</button>
+            </div>
+        </section>
+        <section id="qna" class="container">
+            <div class="status-bar">
+                <div class="status"></div>
+            </div>
+            <div class="q box"></div>
+            <div class="answer"></div>
+        </section>
+        <section id="calc">
+            <div class="calc-bar">
+                CALCULATING
+                <div class="calc"></div>
+            </div>
+            <p class="wait">결과분석중...</p>
+        </section>
+        <section id="result" class="container">
+            <div id="score-box">
+                <div class="p title"></div>
+                <div class="point"></div>
+                <div class="pin"></div>
+                <div class="score-bar"></div>
+            </div>
+            <div id="desc-box">
+                <div class="art"></div>
+                <div class="result title"></div>
+                <div class="res desc"></div>
+                <span class="go-artist highlight" onclick=javascript:goArtist()>
+                    그림이 마음에 드시나요?
+                </span>
+            </div>
+            <hr>
+            <p>결과 공유하기</p>
+            <div class="hash">#심리테스트 #이미지테스트 #임포스터</div>
+            <div id="share-box">
+                <a onclick=javascript:tw() target="_blank" alt="Share on Twitter" title="트위터에 공유하기">
+                    <span class="tw"></span>
+                </a>
+            </div>
+            <button onclick=javascript:copy() class="btn">링크 복사하기</button>
+            <hr>
+            <div id="intro-box">
+                소개박스
+            </div>
+            <hr>
+            <div class="caution">
+                <p>
+                    해당 테스트는 정확히 맞지 않을 수 있습니다!<br>재미로만 봐주세요 ;>
+                </p>
+            </div>
+            <hr>
+            <div class="caution">
+                <p>
+                    게임의 모든 저작권은 IMPO에게 있습니다.
+                </p>
+            </div>
+            <hr>
+            
+        </section>
+        <footer id="footer">
+            <p>all rights reserved by <a href="#" >(c)IMPO</a></p><br>
+            <a href="#">문의사항 </a>|<a href="#"> contact </a>|<a href="#"> 기업정보</a>
+        </footer>
+    </div>
+    <script src="js/data2.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
