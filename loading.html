@@ -14,54 +14,23 @@
     <link rel="stylesheet" href="css/result.css">
     <link rel="stylesheet" href="css/reset.css">
     <script src="https://kit.fontawesome.com/12b3c15bbc.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js";></script>
+    
     <title>Impo</title>
 </head>
-<script>
-/*var JSData = new Object();
-$.getJSON(
-  "http://121.133.196.202:8080/api/stamp/random",
-  function(data, textStatus, jqXHR)
-{
-  for(var item in data)
-    JSData[item] = data[item];
-});*/
-</script>
+
 <body>
     <div id="wrap">
         <header id="header">
-            <a href="./index.html" >👽</a>
+            
             <!--<button class="logo head" onclick=javascript:switchMode()></button>-->
         </header>
         <section id="welcome" class="container">
-            <div id="title-box">
-                <h1 class="title">
-                    🧤<br>
-                    나에게<br>
-                    어울리는<br>
-                    도장찾기
-                </h1>
-                <div class="sec-tit">
-                    내가 찾고싶은<br>
-                    도장은 무엇일까?
-                </div>
+            <!--<input type="text" autofocus>-->
+            
+            <p><br></p>
+            <div class="start-wrap">
+                <button class="start">시 작</button>
             </div>
-
-            <form action=".php" method="get">
-                <input type="text" name="name" placeholder="이름을 입력해주세요." autofocus>
-                <p class="check-name warning"></p>
-                <input class="start" type="submit" value="시작">
-            </form>
-                <!--<div id="name-input">
-                    
-                </div>
-            
-                <div class="start-wrap">
-                   
-                    <button class="start">시 작</button>
-                </div>-->
-            
-
         </section>
         <section id="qna" class="container">
             <div class="status-bar">
@@ -85,7 +54,8 @@ $.getJSON(
                 <div class="score-bar"></div>
             </div>
             <div id="desc-box">
-                <div class="art"></div>
+                <div class="art"><img src="https://www.saegigo.com/data/goods/1/2020/01/77_tmp_ecf18214604ec5d298bf7c5facb08dc54356view.jpg"></div>
+                <!--<div class="art"><img src="{{rst['url_img']}}" alt="stam_img"></div>-->
                 <div class="result title"></div>
                 <div class="res desc"></div>
                 <span class="go-intro highlight" onclick=javascript:goIntro()>
@@ -103,7 +73,7 @@ $.getJSON(
             <!--<button onclick=javascript:copy() class="btn">링크 복사하기</button>-->
             <hr>
             <div id="intro-box">
-                <p class="intro_pic"></p>
+                <p class="intro_pic"></p><br>
                 해당 서비스는 한국외국어대학교 컴퓨터전자시스템공학과 IMPO팀이<br>
                 산학 연계 캡스톤 프로그램을 위해 제작하였습니다.<br>
             </div>
@@ -124,7 +94,7 @@ $.getJSON(
                 </p>
             </div>
             <hr>
-
+            
         </section>
         <footer id="footer">
             <p>all rights reserved by <a href="#" >(c)IMPO</a></p><br>
@@ -134,5 +104,6 @@ $.getJSON(
     <script src="js/qna.js"></script>
     <script src="js/main.js"></script>
     <script src="js/share.js"></script>
+    
 </body>
 </html>

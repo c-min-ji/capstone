@@ -1,10 +1,11 @@
 const header = document.getElementById('header');
 const footer = document.getElementById('footer');
 const qna = document.getElementById('qna');
-/*const u_name = document.querySelector('input[type=text]');*/
+const u_name = document.querySelector('input[type=text]');
 const wrap = document.getElementById('wrap');
 const tabletMQL = window.matchMedia("all and (min-width: 768px)");
 const pcMQL = window.matchMedia("all and (min-width: 1024px)");
+const aiData = document.getElementById('getAIData');
 const ENDPOINT = 9.1;
 const select = [];
 let qIdx = -1;
@@ -44,11 +45,9 @@ const copy = () => {
 }
 
 /*console.log('qnaList[i].a[select[i]])
-nl = []
 for i  = 0; i < ENDPOINT; i++){
     if (qnaList[i].a[i].selected == true){
         value = qnaList[i].a[i].selected;
-        nl.append(value)
     }
     return value*/
 const calcScore = () => {
@@ -81,6 +80,23 @@ const sortResult = (point) => {
 }
 
 const goResult = () => {
+  //서버 데이터 수신
+    var JSData = new Object();
+    $.getJSON(
+      "http://121.133.196.202:8080/api/stamp/random",
+      function(data, textStatus, jqXHR)
+    {
+        var html = '';
+        $.each(data, function(entryIndex, entry) {
+            html += '<div class="entry">';
+            html += '<h3 class="term">' + entry.name + '</h3>';
+            html += '<div class="part">' + entry.part + '</div>';
+        });
+
+    });
+  //
+
+
     if (pcMQL.matches) {
         console.log('PC');
         wrap.style.marginTop = '150px';
@@ -95,22 +111,22 @@ const goResult = () => {
     const pTitle = document.querySelector('.p');
     const res_point = document.querySelector('.point');
     const pin = document.querySelector('.pin');
-    const img_url = '';/*'img/image-' + grade + '.png'; /*이미지삽입 JSON.parse("url_img")*/
+    const img_url = JSData['url_image'];
     const res_img = document.createElement('img');
     const res_img_div = document.querySelector('.art');
     const animal = document.querySelector('.result');
     const desc = document.querySelector('.res');
 
-    pTitle.innerHTML = '스타일은';
+    pTitle.innerHTML = u_name.value + ' 님의 스타일은';
     res_point.innerHTML = point + '점'; /*JSON.parse() 도장이름넣을것 */
     pin.style.marginLeft = infoList[grade].mLeft;
     res_img.src = img_url;
     /*결과 */
     /*res_img.alt = infoList[grade].name; 사진에 커서 댔을때 도장이름
     res_img.title = infoList[grade].name; 도장이름 출력*/
-    res_img_div.appendChild(res_img);/*사진결과창에띄우기*/
+    res_img_div.appendChild(res_img);/*사진결과창에띄우기 */
     /*animal.innerHTML = infoList[grade].name 도장이름;
-    desc.innerHTML = infoList[grade].desc; 내용*/    
+    desc.innerHTML = infoList[grade].desc; 내용*/
 
     setTimeout(() => {
         header.style.display = 'block';
@@ -127,7 +143,65 @@ const goResult = () => {
 
 }
 
+function changeKey(data)
+{
+  var key = '';
+  switch (data) {
+    case 0:
+      key = 'gender';
+      break;
+    case 1:
+      key = 'age';
+      break;
+    case 2:
+      key = 'tti';
+      break;
+    case 3:
+      key = 'religion';
+      break;
+    case 4:
+      key = 'intensity';
+      break;
+    case 5:
+      key = 'constellation';
+      break;
+    case 6:
+      key = 'design';
+      break;
+    case 7:
+      key = 'price';
+      break;
+    case 8:
+      key = 'letter';
+      break;
+    case 9:
+      key = 'matter';
+      break;
+    case 10:
+      key = 'western';
+      break;
+    default:
+    break;
+  }
+  return key;
+}
+
 const end = () => {
+    //서버 데이터 전달
+    var dataQuestion = new Object();
+    for (var i = 0; i < 10; ++i) {
+      var key = changeKey(i);
+      dataQuestion[key] = select[i];
+    }
+    console.log(JSON.stringify(dataQuestion));
+
+    var url = "http://121.133.196.202:8080/stamp/recommend";
+    var request = new XMLHttpRequest();
+    request.open("POST", url, true);
+    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    request.send(JSON.stringify(dataQuestion));
+
+    //
     qna.style.animation = '';
     const interval = setInterval(() => {
         qna.style.opacity -= 0.1;
@@ -193,11 +267,8 @@ const goNext = () => {
     status.style.width = (ENDPOINT * (qIdx + 1)) + '%';
     q.innerHTML = qNum.q;
     qna.style.animation =
-        'fade-in 0.1s ease-in-out 0.2s forwards, ' +
-        'going-down 0.1s ease-in-out 0.2s forwards';
-
-        /*'fade-in 0.3s ease-in-out 0.4s forwards, ' +
-        'going-down 0.3s ease-in-out 0.4s forwards';*/
+        'fade-in 0.3s ease-in-out 0.4s forwards, ' +
+        'going-down 0.3s ease-in-out 0.4s forwards';
 
     setTimeout(() => {
         const endIdx = qNum.a.length - 1;
@@ -239,18 +310,16 @@ const load = () => {
     const msg = document.querySelector('.check-name');
     const start_btn = document.querySelector('.start');
 
-    /*u_name.addEventListener('blur', () => {
+    u_name.addEventListener('blur', () => {
         try {
             if (u_name.value.length < 1) {
                 throw '이름을 입력해 주세요.';
             }
             msg.innerHTML = '';
-            
         } catch (err) {
-            
             msg.innerHTML = err;
         }
-    });*/
+    });
 
     start_btn.addEventListener('click', () => {
         try {
@@ -261,7 +330,6 @@ const load = () => {
             start_btn.disabled = true;
             begin();
         } catch (err) {
-            begin();
             msg.innerHTML = err;
         }
     });

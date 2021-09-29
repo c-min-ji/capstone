@@ -16,7 +16,7 @@
 .status {
     height: 100%;
     border-radius: 20px;
-    background-color: #C06C84;
+    background-color: #6C5B7B;
 }
 
 .box {
@@ -29,6 +29,7 @@
 }
 
 .q {
+    text-align: center;
     box-sizing: border-box;
     margin-bottom: 30px;
     font-size: 27.2px;
@@ -49,14 +50,14 @@
     font-size: 17.6px;
     font-size: 1.1rem;
     font-weight: bolder;
-    text-align: left;
+    text-align: center;
     transition: background-color, color 0.2s linear;
     opacity: 0;
     cursor: pointer;
 }
 
 .a:hover, .a:focus {
-    background: #C06C84;
+    background: #4f7aa0;
     color: white;
 }
 

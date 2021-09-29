@@ -32,15 +32,15 @@
     height: 100%;
     border-radius: 10px;
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#57a0db+1,e577c4+100 */
-    background: #57a0db;
+    background: #4f7aa0;
     /* Old browsers */
-    background: -moz-linear-gradient(left, #57a0db 1%, #e577c4 100%);
+    background: -moz-linear-gradient(left, #4f7aa0 1%, #69bb5e 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #57a0db 1%, #e577c4 100%);
+    background: -webkit-linear-gradient(left, #4f7aa0 1%, #69bb5e 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #57a0db 1%, #e577c4 100%);
+    background: linear-gradient(to right, #4f7aa0 1%, #69bb5e 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#57a0db', endColorstr='#e577c4', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6C5B7B', endColorstr='#e577c4', GradientType=1);
     /* IE6-9 */
     animation: working 5.5s 2s forwards;
 }
